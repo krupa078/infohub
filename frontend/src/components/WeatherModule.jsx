@@ -11,7 +11,7 @@ export default function WeatherModule() {
     setLoading(true);
     setError("");
     try {
-      const res = await axios.get(`/api/weather?city=${encodeURIComponent(selectedCity)}`);
+      const res = await axios.get(`https://infohub-pzbw.onrender.com/api/weather?city=${encodeURIComponent(selectedCity)}`);
       setData(res.data);
     } catch (err) {
       setError(err?.response?.data?.error || "Failed to fetch weather.");

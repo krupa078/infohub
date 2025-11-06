@@ -12,7 +12,7 @@ export default function CurrencyConverter() {
     setError('');
     setResult(null);
     try {
-      const res = await axios.get(`/api/currency?amount=${encodeURIComponent(amount)}`);
+      const res = await axios.get(`https://infohub-pzbw.onrender.com/api/currency?amount=${amount}`);
       setResult(res.data);
     } catch (err) {
       setError(err?.response?.data?.error || 'Failed to fetch conversion.');
